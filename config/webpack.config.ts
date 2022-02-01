@@ -31,6 +31,7 @@ export default {
               "@babel/preset-env",
               "@babel/preset-react",
             ],
+            plugins: ["babel-plugin-styled-components"],
           },
         },
         exclude: /node_modules/,
