@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { Button } from "./button";
+import { Button } from ".";
 
 export default {
-  title: "Example/Button",
+  title: "Atoms/Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
 
@@ -13,3 +13,13 @@ export const Primary: ComponentStory<typeof Button> = Template.bind({});
 Primary.args = {
   children: "Primary",
 };
+
+export const Secondary: ComponentStory<typeof Button> = Template.bind({});
+Secondary.args = {
+  children: "Secondary",
+};
+
+
+export const Blah = () => {
+  return <span>Blah Component</span>
+}
