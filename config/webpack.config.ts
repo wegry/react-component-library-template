@@ -23,17 +23,7 @@ export default {
     rules: [
       {
         test: /\.tsx?$/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [
-              "@babel/preset-typescript",
-              "@babel/preset-env",
-              "@babel/preset-react",
-            ],
-            plugins: ["babel-plugin-styled-components"],
-          },
-        },
+        use: "babel-loader",
         exclude: /node_modules/,
       },
     ],
