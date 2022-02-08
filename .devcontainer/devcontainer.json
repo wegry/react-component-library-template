@@ -9,14 +9,15 @@
 		// Use -bullseye variants on local arm64/Apple Silicon.
 	},
 	"mounts": [
-		"source=shared_node_modules,target=${contain`erWorkspaceFolder}/node_modules,type=volume",
+		"source=shared_node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
 	],
 	// Set *default* container specific settings.json values on container create.
 	"settings": {},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"dbaeumer.vscode-eslint",
-		"styled-components.vscode-styled-components"
+		"styled-components.vscode-styled-components",
+		"pflannery.vscode-versionlens"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [3000],
