@@ -19,7 +19,11 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   wget \
   locales \
   && rm -rf /var/lib/apt/lists/* \
-  && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+  && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
+  && apt-get -qy full-upgrade \
+  && apt-get install -qy curl \
+  && apt-get install -qy curl \
+  && curl -sSL https://get.docker.com/ | sh
 
 # RUN curl -sL https://deb.nodesource.com/setup_4.x | bash \
 #   && apt-get install nodejs
@@ -45,3 +49,6 @@ ENV SHELL /bin/zsh
 
 # # zsh configuration
 # ADD .zshrc $HOME
+
+RUN docker run -v /var/run/docker.sock:/var/run/docker.sock \
+      -ti docker
