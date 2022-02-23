@@ -15,7 +15,8 @@
     "build:prod": "webpack --config config/webpack.config.prod.ts",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "loki:update": "loki update --chromeFlags=\"--headless --no-sandbox\""
   },
   "keywords": [],
   "author": "",
@@ -61,14 +62,14 @@
   "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false
       },
       "chrome.iphone7": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "preset": "iPhone 7"
       }
     }

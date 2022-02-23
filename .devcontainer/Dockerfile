@@ -21,8 +21,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   && rm -rf /var/lib/apt/lists/* \
   && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
   && apt-get -qy full-upgrade \
-  && apt-get install -qy curl \
-  && apt-get install -qy curl \
   && curl -sSL https://get.docker.com/ | sh
 
 # RUN curl -sL https://deb.nodesource.com/setup_4.x | bash \
@@ -50,5 +48,26 @@ ENV SHELL /bin/zsh
 # # zsh configuration
 # ADD .zshrc $HOME
 
-RUN docker run -v /var/run/docker.sock:/var/run/docker.sock \
-      -ti docker
+# Install Chrome
+
+RUN echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/chrome.list
+
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+
+RUN set -x \
+  && apt-get update \
+  && apt-get install -y \
+  google-chrome-stable
+
+ENV CHROME_BIN /usr/bin/google-chrome
+
+# Log versions
+
+RUN set -x \
+  && node -v \
+  && npm -v \
+  && google-chrome --version
+
+
+# RUN docker run -v /var/run/docker.sock:/var/run/docker.sock \
+#   -ti docker
