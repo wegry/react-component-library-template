@@ -14,9 +14,12 @@
     "build:dev": "webpack --config config/webpack.config.dev.ts",
     "build:prod": "webpack --config config/webpack.config.prod.ts",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook:build": "build-storybook -o ./storybook-build",
     "typecheck": "tsc",
-    "loki:update": "loki update --chromeFlags=\"--headless --no-sandbox\""
+    "loki": "loki --chromeFlags=\"--headless --no-sandbox\"",
+    "loki:update": "npm run loki -- update",
+    "loki:test": "npm run loki -- test",
+    "loki:test:ci": "npm run storybook:build && npm run loki -- --requireReference --reactUri file:./storybook-build"
   },
   "keywords": [],
   "author": "",
@@ -58,20 +61,5 @@
     "typescript-plugin-styled-components": "^2.0.0",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2"
-  },
-  "loki": {
-    "configurations": {
-      "chrome.laptop": {
-        "target": "chrome.app",
-        "width": 1366,
-        "height": 768,
-        "deviceScaleFactor": 1,
-        "mobile": false
-      },
-      "chrome.iphone7": {
-        "target": "chrome.app",
-        "preset": "iPhone 7"
-      }
-    }
   }
 }
