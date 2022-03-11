@@ -28,6 +28,11 @@
     "strict": true,
     "skipLibCheck": true,
     "noErrorTruncation": false,
+    "types": [
+      "puppeteer",
+      "jest-environment-puppeteer",
+      "expect-puppeteer"
+    ]
   },
   "ts-node": {
     "compilerOptions": {

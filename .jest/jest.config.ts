@@ -8,9 +8,10 @@ export default {
     "^.+\\.stories\\.[tj]sx?$": "@storybook/addon-storyshots/injectFileName",
   },
   rootDir: "../",
-  testEnvironment: "jsdom",
+  // testEnvironment: "jsdom",
   moduleDirectories: ["node_modules", "resources"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', "<rootDir>/.jest/jest.setup.ts"],
+  testRegex: ["!(.e2e.spec.[tj]sx?$)", ".spec.[tj]sx?$"],
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/dist/"],
 };

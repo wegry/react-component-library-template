@@ -24,7 +24,11 @@
 	// Use 'portsAttributes' to set default properties for specific forwarded ports. More info: https://code.visualstudio.com/docs/remote/devcontainerjson-reference.
 	"portsAttributes": {
 		"6006": {
-			"label": "React Component Library Storybook",
+			"label": "Storybook",
+			"onAutoForward": "notify"
+		},
+		"3000": {
+			"label": "Storybook Build",
 			"onAutoForward": "notify"
 		}
 	},
