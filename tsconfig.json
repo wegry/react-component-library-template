@@ -1,38 +1,24 @@
 {
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "outDir": "./dist",
     "declaration": true,
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "es5",
+    "target": "es2020",
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitThis": true,
     "useUnknownInCatchVariables": true,
     "exactOptionalPropertyTypes": true,
     "noUncheckedIndexedAccess": true,
-    "strictNullChecks": true,
     "strict": true,
-    "skipLibCheck": true,
-    "noErrorTruncation": false,
-    "types": [
-      "puppeteer",
-      "jest-environment-puppeteer",
-      "expect-puppeteer"
-    ]
+    "skipLibCheck": true
   },
   "ts-node": {
     "compilerOptions": {
